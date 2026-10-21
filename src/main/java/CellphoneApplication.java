@@ -4,28 +4,62 @@ public class CellphoneApplication {
         Scanner read = new Scanner(System.in);
 
         // Creating cellphone object
-        Cellphone cellPhone = new Cellphone();
+        Cellphone cellPhone1 = new Cellphone();
 
         // Asking user for information
+        // .set(setter) allows to change the value of a variable in a class
         System.out.println("Phone serial number: ");
-        cellPhone.setSerialNumber(read.nextInt());
+        cellPhone1.setSerialNumber(read.nextInt());
         read.nextLine();
 
         System.out.println("Phone model: ");
-        cellPhone.setModel(read.nextLine());
+        cellPhone1.setModel(read.nextLine());
 
         System.out.println("Phone Carrier: ");
-        cellPhone.setCarrier(read.nextLine());
+        cellPhone1.setCarrier(read.nextLine());
 
         System.out.println("Phone Number: ");
-        cellPhone.setPhoneNumber(read.nextLine());
+        cellPhone1.setPhoneNumber(read.nextLine());
 
         System.out.println("Phone Owner (Full Name): ");
-        cellPhone.setOwner(read.nextLine());
+        cellPhone1.setOwner(read.nextLine());
 
-        // Calling method
-        cellPhone.displayPhoneInfo();
+        // Creating cellphone2
+        Cellphone cellPhone2 = new Cellphone();
+        System.out.println("Phone serial number: ");
+        cellPhone2.setSerialNumber(read.nextInt());
+        read.nextLine();
+
+        System.out.println("Phone model: ");
+        cellPhone2.setModel(read.nextLine());
+
+        System.out.println("Phone Carrier: ");
+        cellPhone2.setCarrier(read.nextLine());
+
+        System.out.println("Phone Number: ");
+        cellPhone2.setPhoneNumber(read.nextLine());
+
+        System.out.println("Phone Owner (Full Name): ");
+        cellPhone2.setOwner(read.nextLine());
 
         read.close();
+        // Display cellPhones
+        displayPhoneInfo(cellPhone1);
+        displayPhoneInfo(cellPhone2);
+
+        // Dialing phones
+        cellPhone1.dial(cellPhone2.getPhoneNumber());
+        cellPhone2.dial(cellPhone1.getPhoneNumber());
+
+    }
+    // Method for displaying information
+    public static void displayPhoneInfo(Cellphone cellPhone) {
+        System.out.println("=== Phone Information ===");
+        System.out.println("Serial Number: " + cellPhone.getSerialNumber());
+        System.out.println("Model: " + cellPhone.getModel());
+        System.out.println("Carrier: " + cellPhone.getCarrier());
+        System.out.println("Phone Number: " + cellPhone.getPhoneNumber());
+        System.out.println("Owner: " + cellPhone.getOwner());
+        System.out.println("==========================");
     }
 }

@@ -15,6 +15,8 @@ public class Cellphone {
         this.owner = "";
     }
     // Creating Getter and Setter for serialNumber
+    // Getter allows to read the value of a variable in a class
+    // Setter allows change of a variable in a class
     public int getSerialNumber() {
         return this.serialNumber;
     }
@@ -49,14 +51,8 @@ public class Cellphone {
     public void setOwner(String owner) {
         this.owner = owner;
     }
-    // Method for displaying information
-    public void displayPhoneInfo() {
-        System.out.println("=== Phone Information ===");
-        System.out.println("Serial Number: " + serialNumber);
-        System.out.println("Model: " + model);
-        System.out.println("Carrier: " + carrier);
-        System.out.println("Phone Number: " + phoneNumber);
-        System.out.println("Owner: " + owner);
-        System.out.println("==========================");
+    // Method for dialing
+    public void dial(String phoneNumber) {
+        System.out.printf("%s's phone is calling %s%n", getOwner(), getPhoneNumber());
     }
 }
