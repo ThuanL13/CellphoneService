@@ -49,4 +49,14 @@ public class Cellphone {
     public void setOwner(String owner) {
         this.owner = owner;
     }
+    // Method for displaying information
+    public void displayPhoneInfo() {
+        System.out.println("=== Phone Information ===");
+        System.out.println("Serial Number: " + serialNumber);
+        System.out.println("Model: " + model);
+        System.out.println("Carrier: " + carrier);
+        System.out.println("Phone Number: " + phoneNumber);
+        System.out.println("Owner: " + owner);
+        System.out.println("==========================");
+    }
 }
