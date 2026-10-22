@@ -14,6 +14,15 @@ public class Cellphone {
         this.phoneNumber = "";
         this.owner = "";
     }
+    // Overloading Constructor
+    public Cellphone(int serialNumber, String model, String carrier,
+                     String phoneNumber, String owner) {
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.carrier = carrier;
+        this.phoneNumber = phoneNumber;
+        this.owner = owner;
+    }
     // Creating Getter and Setter for serialNumber
     // Getter allows to read the value of a variable in a class
     // Setter allows change of a variable in a class
@@ -53,6 +62,10 @@ public class Cellphone {
     }
     // Method for dialing
     public void dial(String phoneNumber) {
-        System.out.printf("%s's phone is calling %s%n", getOwner(), getPhoneNumber());
+        System.out.printf("%s's phone is calling %s%n", getOwner(), phoneNumber);
+    }
+    // Method for dialing with Cellphone (overloading)
+    public void dial(Cellphone cellPhone) {
+        System.out.printf("%s 's phone is calling %s%n", getOwner(), cellPhone.getPhoneNumber());
     }
 }

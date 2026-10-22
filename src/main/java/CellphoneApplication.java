@@ -24,7 +24,7 @@ public class CellphoneApplication {
         System.out.println("Phone Owner (Full Name): ");
         cellPhone1.setOwner(read.nextLine());
 
-        // Creating cellphone2
+        // Creating cellPhone2
         Cellphone cellPhone2 = new Cellphone();
         System.out.println("Phone serial number: ");
         cellPhone2.setSerialNumber(read.nextInt());
@@ -42,14 +42,21 @@ public class CellphoneApplication {
         System.out.println("Phone Owner (Full Name): ");
         cellPhone2.setOwner(read.nextLine());
 
+        // Creating cellPhone3
+        Cellphone cellPhone3 = new Cellphone(999999, "Iphone Duo", "T-Mobile",
+                "555-555-6666", "Remsey");
+
         read.close();
         // Display cellPhones
         displayPhoneInfo(cellPhone1);
         displayPhoneInfo(cellPhone2);
 
-        // Dialing phones
+        // Dialing phones(Using String Method)
         cellPhone1.dial(cellPhone2.getPhoneNumber());
         cellPhone2.dial(cellPhone1.getPhoneNumber());
+
+        // Dialing using Cellphone
+        cellPhone1.dial(cellPhone3);
 
     }
     // Method for displaying information
